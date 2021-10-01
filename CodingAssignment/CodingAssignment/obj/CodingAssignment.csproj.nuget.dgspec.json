@@ -1,35 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Maja\\Desktop\\CodingAssignment\\CodingAssignment\\CodingAssignment.csproj": {}
+    "C:\\Users\\Maja\\Projekti\\assignment\\CodingAssignment\\CodingAssignment\\CodingAssignment.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Maja\\Desktop\\CodingAssignment\\CodingAssignment\\CodingAssignment.csproj": {
+    "C:\\Users\\Maja\\Projekti\\assignment\\CodingAssignment\\CodingAssignment\\CodingAssignment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maja\\Desktop\\CodingAssignment\\CodingAssignment\\CodingAssignment.csproj",
+        "projectUniqueName": "C:\\Users\\Maja\\Projekti\\assignment\\CodingAssignment\\CodingAssignment\\CodingAssignment.csproj",
         "projectName": "CodingAssignment",
-        "projectPath": "C:\\Users\\Maja\\Desktop\\CodingAssignment\\CodingAssignment\\CodingAssignment.csproj",
+        "projectPath": "C:\\Users\\Maja\\Projekti\\assignment\\CodingAssignment\\CodingAssignment\\CodingAssignment.csproj",
         "packagesPath": "C:\\Users\\Maja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maja\\Desktop\\CodingAssignment\\CodingAssignment\\obj\\",
+        "outputPath": "C:\\Users\\Maja\\Projekti\\assignment\\CodingAssignment\\CodingAssignment\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Maja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Maja\\Desktop\\CodingAssignment\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Maja\\Desktop\\CodingAssignment\\Model\\Model.csproj"
+              "C:\\Users\\Maja\\Projekti\\assignment\\CodingAssignment\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Maja\\Projekti\\assignment\\CodingAssignment\\Model\\Model.csproj"
               }
             }
           }
@@ -41,34 +41,38 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[8.1.1, )"
             },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[5.0.10, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.1, )"
+              "version": "[5.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.1, )"
+              "version": "[5.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.1, )"
+              "version": "[5.0.10, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.1.4, )"
+              "version": "[5.6.3, )"
             }
           },
           "imports": [
@@ -93,29 +97,29 @@
         }
       }
     },
-    "C:\\Users\\Maja\\Desktop\\CodingAssignment\\Model\\Model.csproj": {
+    "C:\\Users\\Maja\\Projekti\\assignment\\CodingAssignment\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maja\\Desktop\\CodingAssignment\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\Maja\\Projekti\\assignment\\CodingAssignment\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\Maja\\Desktop\\CodingAssignment\\Model\\Model.csproj",
+        "projectPath": "C:\\Users\\Maja\\Projekti\\assignment\\CodingAssignment\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\Maja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maja\\Desktop\\CodingAssignment\\Model\\obj\\",
+        "outputPath": "C:\\Users\\Maja\\Projekti\\assignment\\CodingAssignment\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Maja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -126,8 +130,8 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "imports": [
             "net461",
             "net462",

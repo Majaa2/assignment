@@ -1,4 +1,6 @@
 ﻿using CodingAssignment.Database;
+using Model;
+using Model.Request;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +10,10 @@ namespace CodingAssignment.Interface
 {
     public interface ISupplier
     {
-        List<Supplier> Get();
-        Supplier GetById(int id);
-        Supplier Create(Model.Request.Supplier supplier);
+        CAResponse Get();
+        CAResponse GetById(int id);
+        CAResponse Create(SupplierRequest supplier);
+        CAResponse Edit(SupplierRequest supplier);
+        CAResponse Delete(int id);
     }
 }

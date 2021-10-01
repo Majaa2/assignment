@@ -43,9 +43,12 @@ namespace CodingAssignment
             services.AddSwaggerGen();
             services.AddDbContext<Database.NorthWindContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DB")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
             services.AddAutoMapper(typeof(Database.NorthWindContext));
-
+           
             services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddScoped<ISupplier, SupplierService>();
+            services.AddScoped<IProduct, ProductService>();
+            services.AddScoped<IOrder, OrderService>();
+            services.AddScoped<ICategory, CategoryService>();
             services.AddCors(options =>
             {
                 options.AddPolicy("EnableCORS", builder =>
