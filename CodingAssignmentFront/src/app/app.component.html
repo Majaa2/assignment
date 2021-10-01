@@ -1,0 +1,7 @@
+<app-header [isSmallScreen]="isSmallScreen"></app-header>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+<footer  *ngIf="isSmallScreen">
+<app-bottom-navigation></app-bottom-navigation>
+</footer>

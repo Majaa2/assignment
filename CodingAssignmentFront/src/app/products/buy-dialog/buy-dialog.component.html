@@ -1,0 +1,33 @@
+<div mat-dialog-content>
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    "
+  >
+    <b>{{ data.product.ProductName }}</b>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <div style="display: flex; align-items: center">
+      <button mat-icon-button color="primary" (click)="decrease()">
+        <mat-icon>remove_circle_outline</mat-icon>
+      </button>
+      <b>{{ quantity }}</b>
+      <button mat-icon-button color="primary" (click)="increase()" [disabled]="disableInc">
+        <mat-icon>add_circle_outline</mat-icon>
+      </button>
+    </div>
+    <small style="color: red;">{{stockInfo}}</small>
+</div>
+    {{ data.product.UnitPrice * quantity | currency: "USD" }}
+    <div style="display: flex; align-items: center">
+      <button mat-icon-button class="close" color="primary" (click)="createOrderDetail()">
+          <mat-icon>check</mat-icon>
+      </button>
+      <button mat-icon-button class="close" color="warn" (click)="onNoClick()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

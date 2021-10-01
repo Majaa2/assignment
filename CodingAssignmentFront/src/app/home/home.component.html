@@ -1,0 +1,30 @@
+<div class="row" style="justify-content: center">
+  <div class="col-md-12">
+    <h3 style="margin-left: 20px">Categories</h3>
+  </div>
+  <div
+    class="col-md-3"
+    *ngFor="let category of categories"
+    style="padding: 15px"
+  >
+    <figure class="category-card">
+      <img
+        [src]="getImage(category.Picture)"
+        alt="image"
+        style="height: 100%; width: 100%"
+      />
+      <figcaption>
+        <h3>
+          <b>{{ category.CategoryName }}</b>
+        </h3>
+        <button mat-stroked-button class="explore-btn" routerLink='./products' [queryParams]="{Category: category.CategoryId}">
+          Explore 
+        </button>
+      </figcaption>
+    </figure>
+  </div>
+  <!-- <div class="col-md-12">
+    <h3 style="margin-left: 20px">Pending order</h3>
+
+  </div> -->
+</div>

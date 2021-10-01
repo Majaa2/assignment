@@ -1,0 +1,19 @@
+.nav-item{
+    text-decoration: none;
+    padding: 5px 10px;
+    color: var(--primary-color);
+}
+
+
+a.nav-item::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    background: var(--primary-darker-color);;
+    transition: width .3s;
+}
+
+a.nav-item:hover::after {
+    width: 100%;
+}

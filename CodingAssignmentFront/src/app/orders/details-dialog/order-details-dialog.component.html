@@ -1,0 +1,61 @@
+<h1 mat-dialog-title>#{{ data.order.OrderId }}</h1>
+<div mat-dialog-content>
+
+  <p *ngIf="data.order.OrderDate"><b>Order date: </b> {{ data.order.OrderDate | date:'dd-MM-yyyy'}}</p>
+  <p *ngIf="data.order.RequiredDate"><b>Required date: </b> {{ data.order.RequiredDate | date:'dd-MM-yyyy'}}</p>
+  <p *ngIf="data.order.ShippedDate"><b>Shipped date: </b> {{ data.order.ShippedDate | date:'dd-MM-yyyy'}}</p>
+  <p *ngIf="data.order.ShipVia"><b>Ship via: </b>{{ data.order.ShipVia }}</p>
+  <p *ngIf="data.order.Freight"><b>Freight: </b>{{ data.order.Freight }}</p>
+  <p *ngIf="data.order.ShipName"><b>Ship name: </b>{{ data.order.ShipName }}</p>
+  <p *ngIf="data.order.ShipAddress"><b>Ship address: </b>{{ data.order.ShipAddress }}</p>
+  <p *ngIf="data.order.ShipCity"><b>Ship city: </b>{{ data.order.ShipCity }}</p>
+  <p *ngIf="data.order.ShipRegion"><b>Ship region: </b>{{ data.order.ShipRegion }}</p>
+  <p *ngIf="data.order.ShipPostalCode"><b>Ship postal code: </b>{{ data.order.ShipPostalCode }}</p>
+  <p *ngIf="data.order.ShipCountry"><b>Ship country: </b>{{ data.order.ShipCountry }}</p>
+
+  <div>
+  <p><b>Order details:</b></p>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="product">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Product </th>
+        <td mat-cell *matCellDef="let row"> 
+          <span><b>{{row?.Product?.ProductName}}</b> </span> <br/>
+          <small>{{row?.Product?.Category?.CategoryName}} <span *ngIf="row.Product.Category && row.Product.Supplier">/</span> {{row?.Product?.Supplier?.CompanyName}} </small>
+      </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="unitPrice">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Unit price</th>
+        <td mat-cell *matCellDef="let row"> {{row.UnitPrice  | currency:"USD"}} </td>
+      </ng-container>
+  
+
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Quantity </th>
+        <td mat-cell *matCellDef="let row"> {{row.Quantity}} </td>
+      </ng-container>
+  
+ 
+      <ng-container matColumnDef="discount">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Discount </th>
+        <td mat-cell *matCellDef="let row"> {{row.Discount}} </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+  </div>
+</div>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button class="close" (click)="onNoClick()">Ok</button>
+</div>

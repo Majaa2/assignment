@@ -1,0 +1,13 @@
+<mat-toolbar color="white">
+    <span *ngIf="isSmallScreen" class="example-spacer"></span>
+    <span><img src="../../assets/axess_digital_logo.png" style="width:170px;height:40px;cursor:pointer" routerLink="/" /></span> 
+    <span class="example-spacer"></span>
+    <a *ngIf="!isSmallScreen" href="#" mat-button class="nav-item" routerLink="/products" routerLinkActive="active-link">Products</a>
+    <a *ngIf="!isSmallScreen" href="#" mat-button class="nav-item" routerLink="/suppliers" routerLinkActive="active-link">Suppliers</a>
+    <a *ngIf="!isSmallScreen" href="#" mat-button class="nav-item" routerLink="/orders" routerLinkActive="active-link">Orders</a>
+    <button mat-icon-button color="primary" routerLink="checkout"
+        [matBadge]="cartItems" matBadgePosition="after" matBadgeColor="accent">
+      <mat-icon>shopping_basket</mat-icon>
+    </button>
+  </mat-toolbar>
+  

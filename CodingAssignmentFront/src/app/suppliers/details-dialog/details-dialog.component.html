@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>{{ data.supplier.CompanyName }}</h1>
+<div mat-dialog-content>
+  <p
+    *ngIf="
+      data.supplier.Address || data.supplier.City || data.supplier.PostalCode
+    "
+  >
+    <mat-icon>place</mat-icon> {{ data.supplier.Address }}
+    <span
+      *ngIf="
+        (data.supplier.Address && data.supplier.City) ||
+        (data.supplier.Address && data.supplier.PostalCode)
+      "
+      >, </span
+    >
+    {{ data.supplier.City
+    }}<span *ngIf="data.supplier.City && data.supplier.PostalCode">, </span>
+    {{ data.supplier.PostalCode }}
+  </p>
+  <p *ngIf="data.supplier.Region|| data.supplier.Country">
+    <mat-icon>public</mat-icon> {{ data.supplier.Region }}<span *ngIf="data.supplier.Region && data.supplier.Country">,</span> {{ data.supplier.Country }}
+  </p>
+  <p *ngIf="data.supplier.Phone"><mat-icon>phone</mat-icon> {{ data.supplier.Phone }}</p>
+  <p *ngIf="data.supplier.Fax"><mat-icon>print</mat-icon> {{ data.supplier.Fax }}</p>
+  <p *ngIf="data.supplier.ContactName"><b>Contact name:</b> {{ data.supplier.ContactName }}</p>
+  <p *ngIf="data.supplier.ContactTitle"><b>Contact title: </b>{{ data.supplier.ContactTitle }}</p>
+  <p *ngIf="data.supplier.HomePage"><b>Home page: </b>{{ data.supplier.HomePage }}</p>
+  <div *ngIf="data.supplier.Products.length>0">
+  <p><b>Products:</b></p>
+  <ul *ngFor="let product of data.supplier.Products">
+    <li>{{ product.ProductName }}</li>
+  </ul>
+</div>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button class="close" (click)="onNoClick()">Ok</button>
+</div>

@@ -1,0 +1,30 @@
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+      "
+    >
+    <div style="width: 50%;">
+      <b>{{ data.Product.ProductName }}</b>
+    </div>
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <div style="display: flex; align-items: center">
+        <button mat-icon-button color="primary" type="button" (click)="decrease()">
+          <mat-icon>remove_circle_outline</mat-icon>
+        </button>
+        <b>{{ data.Quantity }}</b>
+        <button mat-icon-button color="primary" type="button" (click)="increase()" [disabled]="disableInc">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+      </div>
+      <small style="color: red;">{{stockInfo}}</small>
+  </div>
+      {{ data.Product.UnitPrice * data.Quantity | currency: "USD" }}
+        <button type="button" mat-icon-button color="warn" (click)="remove()" ><!---->
+        <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+ 

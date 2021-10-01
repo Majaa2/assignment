@@ -1,0 +1,26 @@
+<mat-card style="max-width: 700px; margin: 0 auto">
+  <mat-card-title style="color: var(--primary-color);">Shopping cart</mat-card-title>
+  <mat-card-subtitle *ngIf="cartItems.length == 0"
+    >No items in your shpping cart</mat-card-subtitle
+  >
+  <mat-card-subtitle style="color: red;" *ngIf="error != ''"
+    >{{error}}</mat-card-subtitle
+  >
+  <div *ngFor="let data of cartItems; trackBy: trackByIndex">
+    <app-checkout-item
+      [data]="data"
+      (removeProduct)="remove($event)"
+      (quantity)="edit($event)"
+    ></app-checkout-item>
+  </div>
+  <hr>
+  <div style="width: 100%; text-align: end; padding-right: 25px;">
+    Total: {{ totalValue | currency: 'USD'}}
+  </div>
+  <hr>
+
+  <mat-card-actions style="display: flex;">
+    <button [disabled]="loading" style="width: 50%; margin-right: 15px;" mat-raised-button color="accent" routerLink="../products">More products</button>
+    <button [disabled]="loading" style="width: 50%; margin-left: 15px;" mat-raised-button color="primary" (click)="completePurchase()">Complete purchase</button>
+  </mat-card-actions>
+</mat-card>
